@@ -18,6 +18,8 @@ import javax.persistence.TemporalType;
 @Table(name = "ALGPVSEXG")
 public class Algpvsexg implements java.io.Serializable {
 
+	private static final long serialVersionUID = -1549327489702645927L;
+
 	private long pk;
 
 	private String shipmentnbr;
