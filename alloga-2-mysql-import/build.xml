@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="alloga-2-mysql-import" >
+
+	<path id="mvn_dependency_jars">
+		<fileset dir="target/dependency"/>
+		<pathelement location="target/classes"/>
+	</path>
+
+
+	<target name="generateAllogaModel">
+		<taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask" classpathref="mvn_dependency_jars" />
+		<hibernatetool destdir="src/main/java">
+			<jdbcconfiguration 
+				configurationfile="src/main/resources/as400.alloga.hibernate.cfg.xml" 
+				revengfile="src/main/resources/as400.alloga.hibernate.reveng.xml"
+				packagename="com.galexis.allog2mysql.deleteme" detectmanytomany="true" />
+			<classpath refid="mvn_dependency_jars"/>				
+			<hbm2java jdk5="true" ejb3="true"  />
+		</hibernatetool>
+	</target>
+
+	
+	<target name="generateGalexisModel">
+		<taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask" classpathref="mvn_dependency_jars" />
+		<hibernatetool destdir="src/main/java">
+			<jdbcconfiguration 
+				configurationfile="src/main/resources/as400.galexis.hibernate.cfg.xml" 
+				revengfile="src/main/resources/as400.galexis.hibernate.reveng.xml"
+				packagename="com.galexis.allog2mysql.deleteme" detectmanytomany="true" />
+			<classpath refid="mvn_dependency_jars"/>				
+			<hbm2java jdk5="true" ejb3="true"  />
+		</hibernatetool>
+	</target>
+
+	
+	<target name="generateIntegrationConfigDBModel">
+			<taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask" classpathref="mvn_dependency_jars" />
+			<hibernatetool destdir="src/main/java">
+				<jdbcconfiguration 
+					configurationfile="src/main/resources/mysql.localhost.integrationConfigDB.hibernate.cfg.xml" 
+					revengfile="src/main/resources/mysql.localhost.integrationConfigDB.hibernate.reveng.xml"
+					packagename="com.galexis.configdb" detectmanytomany="true" />
+				<classpath refid="mvn_dependency_jars"/>				
+				<hbm2java jdk5="true" ejb3="true"  />
+			</hibernatetool>
+		</target>
+
+	
+</project>

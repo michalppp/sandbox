@@ -1,0 +1,7 @@
+2013-03-05 14:48:29,755 [main] ERROR com.galexis.alloga2mysql.Alloga2MySqlmportMain$1 - Cannot process Date handling for instance of Bizparaddr
+java.lang.NullPointerException
+	at com.galexis.alloga2mysql.Alloga2MySqlmportMain$1.acceptedDateValue(Alloga2MySqlmportMain.java:51)
+	at com.galexis.alloga2mysql.Alloga2MySqlmportMain$1.execute(Alloga2MySqlmportMain.java:34)
+	at org.apache.commons.collections.CollectionUtils.forAllDo(CollectionUtils.java:386)
+	at com.galexis.alloga2mysql.Alloga2MySqlmportMain.processIncrementalInserts(Alloga2MySqlmportMain.java:92)
+	at com.galexis.alloga2mysql.Alloga2MySqlmportMain.main(Alloga2MySqlmportMain.java:162)
